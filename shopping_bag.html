@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Bag</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="shopping-bag section container">
+        <h2 class="section__title-center">
+            Shopping Bag
+        </h2>
+    
+        <div id="cart-items" class="shopping-bag__items">
+            <!-- Items will be dynamically added here -->
+        </div>
+    
+        <div id="total-price" class="shopping-bag__total">
+            <!-- Total price will be displayed here -->
+        </div>
+    </section>
+    
+    <script>
+        // Retrieve items from localStorage
+        var items = localStorage.getItem('cartItems');
+    
+        // If there are items in the cart, display them
+        if (items) {
+            var cartItems = JSON.parse(items);
+            var cartItemsContainer = document.getElementById('cart-items');
+            var totalPrice = 0;
+    
+            // Loop through each item and create a list item to display it
+            cartItems.forEach(function(item) {
+                var listItem = document.createElement('div');
+                listItem.textContent = item.name + ' - $' + item.price;
+                cartItemsContainer.appendChild(listItem);
+                
+                // Add the item price to the total
+                totalPrice += parseFloat(item.price);
+            });
+    
+            // Display the total price
+            var totalPriceContainer = document.getElementById('total-price');
+            totalPriceContainer.textContent = 'Total: $' + totalPrice.toFixed(2);
+        } else {
+            // If there are no items in the cart, display a message
+            var emptyCartMessage = document.createElement('p');
+            emptyCartMessage.textContent = 'Your shopping bag is empty.';
+            cartItemsContainer.appendChild(emptyCartMessage);
+        }
+    </script>
+    </body>
+</html>

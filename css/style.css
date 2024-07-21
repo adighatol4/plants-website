@@ -152,7 +152,7 @@ the website, in dark theme
   box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, .3);
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
+/*=============== REUSABLE Pyn CSS CLASSES for animations ===============*/
 .section{
   padding: 5.5rem 0 1rem;
 }
@@ -190,7 +190,7 @@ the website, in dark theme
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  transition: .4s; /*For animation dark mode*/
+  transition: .40s; /*For animation dark mode*/
 }
 
 /*=============== NAV ===============*/
@@ -662,6 +662,11 @@ the website, in dark theme
   margin-bottom: var(--mb-2-5);
 }
 
+/* CSS styling for the input box */
+.product__quantity {
+  width: 50px; /* Adjust the width as needed */
+}
+
 .contact__content{
   position: relative;
   height: 3rem;
@@ -1061,4 +1066,67 @@ the website, in dark theme
   .scrollup{
     right: 3rem;
   }
+}
+
+
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the particles are behind other content */
+}
+
+
+.education {
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education-item {
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.education-content {
+  background-color: #efefda;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.education-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.education-duration,
+.education-cgpa,
+.education-percentage {
+  color: #666;
+  margin-bottom: 5px;
 }
